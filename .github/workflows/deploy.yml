@@ -29,14 +29,14 @@ jobs:
       - name: Install deps
         run: npm ci || npm install
 
-      # спроба Next export (якщо є такий скрипт)
+      # Якщо є скрипт export (Next), спробувати
       - name: Try Next export (optional)
         run: |
           if npm run | grep -q "export"; then
             npm run export || true
           fi
 
-      # якщо out/ не з’явився — збираємо як SPA (Vite/CRA)
+      # Якщо out/ не з’явився — звичайний build (Vite/CRA)
       - name: Build app (SPA fallback)
         run: |
           if [ ! -d "out" ]; then
@@ -45,14 +45,7 @@ jobs:
             fi
           fi
 
-      # ⚡️ створюємо 404.html з index.html
-      - name: Copy index.html to 404.html
-        run: |
-          if [ -d "dist" ]; then cp dist/index.html dist/404.html; fi
-          if [ -d "build" ]; then cp build/index.html build/404.html; fi
-          if [ -d "out" ]; then cp out/index.html out/404.html; fi
-
-      # визначаємо папку збірки
+      # Визначаємо папку збірки
       - name: Detect build dir
         id: outdir
         run: |
@@ -63,6 +56,13 @@ jobs:
             echo "❌ Не знайдено out/dist/build. Перевір скрипти збірки (package.json)."
             exit 1
           fi
+
+      # SPA 404 + вимкнути Jekyll у каталозі білда
+      - name: Add 404.html and disable Jekyll
+        run: |
+          cp ${{ steps.outdir.outputs.dir }}/index.html ${{ steps.outdir.outputs.dir }}/404.html
+          touch ${{ steps.outdir.outputs.dir }}/.nojekyll
+          ls -la ${{ steps.outdir.outputs.dir }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
