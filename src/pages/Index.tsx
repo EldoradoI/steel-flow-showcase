@@ -80,14 +80,14 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in">
             <button 
               onClick={() => scrollToSection('kontakt')}
-              className="btn-hero"
+              className="btn-hero btn-wide flex items-center justify-center"
             >
               Skontaktuj się z nami
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
             <button 
               onClick={() => scrollToSection('realizacje')}
-              className="btn-secondary"
+              className="btn-hero btn-wide flex items-center justify-center"
             >
               Zobacz realizacje
             </button>
