@@ -82,7 +82,7 @@ const Index = () => {
               onClick={() => scrollToSection('kontakt')}
               className="btn-hero"
             >
-              Skontaktuj się z nami<
+              Zapytaj o wycenę<
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
             <button 
