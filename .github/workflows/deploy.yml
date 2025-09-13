@@ -45,6 +45,13 @@ jobs:
             fi
           fi
 
+      # ⚡️ створюємо 404.html з index.html
+      - name: Copy index.html to 404.html
+        run: |
+          if [ -d "dist" ]; then cp dist/index.html dist/404.html; fi
+          if [ -d "build" ]; then cp build/index.html build/404.html; fi
+          if [ -d "out" ]; then cp out/index.html out/404.html; fi
+
       # визначаємо папку збірки
       - name: Detect build dir
         id: outdir
