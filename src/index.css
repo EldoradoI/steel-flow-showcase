@@ -176,7 +176,7 @@ All colors MUST be HSL - Technical, solid, clean style with high contrast
 @layer components {
   /* Button variants */
   .btn-hero {
-    @apply bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-[0_4px_16px_hsl(var(--accent-yellow)/0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    @apply bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-[0_4px_16px_hsl(var(--accent-yellow)/0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 flex items-center justify-center text-center whitespace-nowrap;
   }
 
   .btn-wide {
