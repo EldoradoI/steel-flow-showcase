@@ -476,10 +476,10 @@ const Index = () => {
                   Dane firmowe
                 </h4>
                 <div className="text-white/80 text-sm space-y-1">
-                  <p>StoczniaPro Sp. z o.o.</p>
-                  <p>NIP: 123-456-78-90</p>
-                  <p>REGON: 123456789</p>
-                  <p>KRS: 0000123456</p>
+                  <p>Steel Welding Sp. z o.o.</p>
+                  <p>NIP: 583-324-34-27</p>
+                  <p>TELEFON: 500701342</p>
+                  <p>KRS: 0000674589</p>
                 </div>
               </div>
 
@@ -503,7 +503,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/60 text-sm">
-              © {currentYear} StoczniaPro. Wszelkie prawa zastrzeżone.
+              © {currentYear} Steel Welding. Wszelkie prawa zastrzeżone.
             </div>
             <div className="text-white/60 text-sm">
               Projekt wersji demonstracyjnej przygotowany przez <span className="text-accent">Eldorado Design</span>
