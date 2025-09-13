@@ -57,7 +57,7 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <span className="text-xl lg:text-2xl font-montserrat font-bold text-white">
-              Stocznia<span className="text-accent">Pro</span>
+              Steel <span className="text-accent">Welding</span>
             </span>
           </div>
 
