@@ -180,7 +180,7 @@ All colors MUST be HSL - Technical, solid, clean style with high contrast
   }
 
   .btn-wide {
-    @apply w-60;
+    @apply w-80;
   }
 
   
