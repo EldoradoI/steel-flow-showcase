@@ -442,8 +442,8 @@ const Index = () => {
                     <div>
                       <h4 className="font-semibold text-white mb-1">Adres siedziby</h4>
                       <p className="text-white/80">
-                        ul. Stoczniowa 15<br />
-                        80-123 Gdańsk<br />
+                        ul. Połęże 12a<br />
+                        80-720 Gdańsk<br />
                         Polska
                       </p>
                     </div>
@@ -455,7 +455,7 @@ const Index = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-white mb-1">Telefon</h4>
-                      <p className="text-white/80">+48 123 456 789</p>
+                      <p className="text-white/80">+48 500 701 342</p>
                     </div>
                   </div>
 
@@ -465,7 +465,7 @@ const Index = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-white mb-1">E-mail</h4>
-                      <p className="text-white/80">kontakt@stoczniapro.pl</p>
+                      <p className="text-white/80">steelwelding@interia.pl</p>
                     </div>
                   </div>
                 </div>
@@ -478,7 +478,6 @@ const Index = () => {
                 <div className="text-white/80 text-sm space-y-1">
                   <p>Steel Welding Sp. z o.o.</p>
                   <p>NIP: 583-324-34-27</p>
-                  <p>TELEFON: 500701342</p>
                   <p>KRS: 0000674589</p>
                 </div>
               </div>
