@@ -2,57 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Definition of the design system for shipyard company
+All colors MUST be HSL - Technical, solid, clean style with high contrast
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Shipyard Brand Colors */
+    --navy-dark: 210 63% 11%;      /* #0A1B2A - main background/sections */
+    --steel-gray: 210 22% 24%;     /* #2F3C4A - headers/lines */
+    --light-bg: 210 25% 96%;       /* #F4F6F8 - section breaks */
+    --accent-yellow: 44 89% 62%;   /* #F5C245 - CTA, icons */
+    
+    /* Base System Colors */
+    --background: var(--light-bg);
+    --foreground: var(--navy-dark);
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: var(--navy-dark);
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --popover-foreground: var(--navy-dark);
+    
+    --primary: var(--navy-dark);
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: var(--steel-gray);
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: var(--light-bg);
+    --muted-foreground: var(--steel-gray);
+    
+    --accent: var(--accent-yellow);
+    --accent-foreground: var(--navy-dark);
+    
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 210 22% 85%;
+    --input: 210 25% 94%;
+    --ring: var(--accent-yellow);
+    
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Custom Design Tokens */
+    --section-padding: 5rem 0;
+    --container-padding: 0 2rem;
+    --max-width: 1200px;
+    
+    /* Gradients */
+    --gradient-navy: linear-gradient(135deg, hsl(var(--navy-dark)), hsl(210 63% 8%));
+    --gradient-overlay: linear-gradient(135deg, hsl(var(--navy-dark) / 0.9), hsl(var(--navy-dark) / 0.7));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-yellow)), hsl(42 89% 58%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 12px hsl(var(--navy-dark) / 0.1);
+    --shadow-elevated: 0 8px 32px hsl(var(--navy-dark) / 0.15);
+    --shadow-accent: 0 4px 16px hsl(var(--accent-yellow) / 0.3);
+    
+    /* Typography Scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: var(--light-bg);
+    --sidebar-foreground: var(--navy-dark);
+    --sidebar-primary: var(--navy-dark);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--steel-gray);
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 22% 85%;
+    --sidebar-ring: var(--accent-yellow);
   }
 
   .dark {
@@ -101,5 +133,165 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Typography hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  /* Container utility */
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+  }
+  
+  /* Section utilities */
+  .section {
+    padding: var(--section-padding);
+  }
+  
+  .section-navy {
+    background: hsl(var(--navy-dark));
+    color: hsl(0 0% 100%);
+  }
+  
+  .section-light {
+    background: hsl(var(--light-bg));
+    color: hsl(var(--navy-dark));
+  }
+}
+
+@layer components {
+  /* Button variants */
+  .btn-hero {
+    @apply bg-accent text-accent-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:shadow-[0_4px_16px_hsl(var(--accent-yellow)/0.3)] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-white text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:bg-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+  
+  /* Card variants */
+  .card-feature {
+    @apply bg-card p-8 rounded-xl shadow-[var(--shadow-card)] transition-all duration-300 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1;
+  }
+  
+  .card-service {
+    @apply bg-white p-6 rounded-lg shadow-[var(--shadow-card)] transition-all duration-300 hover:shadow-[var(--shadow-elevated)] hover:border-accent border-2 border-transparent;
+  }
+  
+  /* Navbar styles */
+  .navbar-link {
+    @apply relative text-white transition-colors duration-300 hover:text-accent focus:outline-none focus:text-accent;
+  }
+  
+  .navbar-link.active {
+    @apply text-accent;
+  }
+  
+  .navbar-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+  
+  .navbar-link:hover::after,
+  .navbar-link.active::after {
+    @apply w-full;
+  }
+  
+  /* Form styles */
+  .form-input {
+    @apply w-full px-4 py-3 border-2 border-border rounded-lg bg-background text-foreground transition-colors duration-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
+  }
+  
+  .form-textarea {
+    @apply w-full px-4 py-3 border-2 border-border rounded-lg bg-background text-foreground transition-colors duration-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 resize-vertical min-h-[120px];
+  }
+  
+  /* Gallery styles */
+  .gallery-item {
+    @apply relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-elevated)];
+  }
+  
+  .gallery-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100 flex items-end p-4;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+  
+  /* Gradient utilities */
+  .gradient-navy {
+    background: var(--gradient-navy);
+  }
+  
+  .gradient-overlay {
+    background: var(--gradient-overlay);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }

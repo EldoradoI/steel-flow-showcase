@@ -13,7 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+        'sans': ['Roboto', 'sans-serif'],
+      },
       colors: {
+        // Shipyard brand colors
+        'navy-dark': 'hsl(var(--navy-dark))',
+        'steel-gray': 'hsl(var(--steel-gray))',
+        'light-bg': 'hsl(var(--light-bg))',
+        'accent-yellow': 'hsl(var(--accent-yellow))',
+        
+        // System colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
